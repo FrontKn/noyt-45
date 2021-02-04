@@ -1,0 +1,246 @@
+.window_services {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.main__services {
+    box-shadow: 0px 10px 16.4px 3.6px rgba(0, 0, 0, 0.23);
+    background-color: #fff;
+    width: 987px;
+    z-index: 12;
+    border-radius: 7px;
+    padding: 60px;
+}
+
+.btn_close_services {
+    float: right;
+    font-family: "Source Sans Pro";
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: -20px;
+    margin-top: -30px;
+}
+
+.up_services {
+    display: flex;
+}
+
+.title_services_active {
+    border-radius: 8px;
+    width: 240px;
+    height: 44px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.title_services_active .text_title_ser {
+    color: white;
+}
+
+.text_title_ser {
+    text-align: center;
+}
+
+.title_services {
+    border-radius: 8px;
+    width: 240px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.text_title_ser {
+    font-family: "NeoSansPro-Ultra";
+    font-size: 15px;
+    color: blue;
+}
+
+.title_services:hover {
+    cursor: pointer;
+    border: 1px solid blue;
+}
+
+.service_title_ser,
+.price_title_ser {
+    font-size: 14;
+    color: blue;
+    font-family: "NeoSansPro-Ultra";
+}
+
+.text_title_ser_active {
+    font-family: "NeoSansPro-Ultra";
+    font-size: 15px;
+    color: #fff;
+}
+
+.service_title_ser {
+    float: left;
+}
+
+.price_title_ser {
+    float: right;
+}
+
+.line_title_ser {
+    height: 2px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #d0d0d0;
+    margin-top: 10px;
+}
+
+.description_title {
+    margin-top: 35px;
+}
+
+.text_des_full {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 20px;
+}
+
+.list_element_ser {
+    padding: 0 60px;
+    margin-top: 20px;
+}
+
+.right_lest_elem {}
+
+.btn_price_elem {
+    border-radius: 5px;
+    background-color: rgb(253, 193, 55);
+    box-shadow: 0px 3px 6.79px 0.21px rgba(0, 0, 0, 0.1);
+    width: 126px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+    font-family: "NeoSansPro-Ultra";
+    line-height: 27px;
+}
+
+.up_list_title_elem {
+    font-size: 15px;
+    font-family: "NeoSansPro-Ultra";
+    color: blue;
+}
+
+.down_list_title_elem {
+    font-size: 12px;
+    color: #7a7a7a;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.elem_list_down_line {
+    height: 2px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #d0d0d0;
+    margin-top: 15px;
+    opacity: .3;
+}
+
+.content_lest_elem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list_services_window {
+    max-height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.select_blog {
+    display: none;
+}
+
+.btn_price_elem {
+    transition: opacity .3s;
+    transition: margin .3s;
+    transition: box-shadow .3s;
+    transition: background-color .05s;
+}
+
+.btn_price_elem:hover {
+    cursor: pointer;
+    box-shadow: 0px 3px 6.79px 0.21px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+.btn_price_elem:active {
+    background-color: rgb(1 78 252);
+    box-shadow: 0px 3px 6.79px 0.21px rgba(0, 0, 0, 0.3);
+}
+
+.everyPop {
+    background-color: #fff;
+    border-radius: 7px;
+    margin-top: 45px;
+    padding: 10px 15px;
+    color: #fdb103;
+    position: absolute;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.35);
+    right: 23%;
+    min-width: 220px;
+    padding-right: 25px;
+    z-index: 12;
+    max-width: 600px;
+}
+
+.everyPop::before {
+    content: '';
+    position: absolute;
+    top: -17px;
+    left: 20%;
+    border: 7px solid transparent;
+    border-bottom: 10px solid white;
+    margin: 0px auto;
+    z-index: 20;
+}
+
+.everyPop_block_close_popUp {
+    font-family: "Source Sans Pro";
+    position: absolute;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+    right: 10px;
+    top: 7px;
+    background-color: red;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

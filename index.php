@@ -1,0 +1,658 @@
+<?php 
+require_once 'connection.php';
+$tab_query = "SELECT * FROM category ORDER BY category_id ASC";
+ 
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НОУТ-45</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sectionTwo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+    <script type="text/javascript" async="" src="http://mc.yandex.ru/metrika/watch.js"></script>
+</head>
+
+<body>
+
+    <section class="section__header">
+        <div class="center_position">
+            <div class="header">
+                <div class="header__logo">
+                    <img src="img/Logo.png" alt="">
+                </div>
+                <div class="header__link">
+                    <a href="#" class="text__mores">Услуги</a>
+                    <a href="#">Товары</a>
+                    <a href="#">О компании</a>
+                    <a href="#">Отзывы</a>
+                    <a href="#">Статус ремонта</a>
+                </div>
+                <div class="button_tel it_toggle_close">
+                    <a type="tel">Заказать звонок</a>
+                </div>
+                <div class="account">
+                    <div class="popUp__log disNoPo">
+                        <!-- <form action="./pages/validation-form/auth.php">
+                            <div class="block_close_popUp it_toggle_close_log">X</div>
+                            <div class="up_login_input" action="./pages/validation-form/check.php">
+                                <div type="text" class="login_text_input classic_form_input" contenteditable="true"  > 
+                                <input type="text" name="login" id="login" placeholder="Введите логин">        
+                            </div>
+                                <div type="text" class="password_text_input classic_form_input" contenteditable="true"> 
+                                <input  type="text" name="password" id="password" placeholder="Введите пароль">
+                                </div>
+                            </div>
+                            <div class="down_login_input">
+                                <button class="in_form_log" >Войти</button>
+                                <div class="text_question">Забыли пароль?</div>
+                            </div>
+                        </form> -->
+                        <form action="./pages/validation-form/auth.php" method="post">
+                        <div class="block_close_popUp it_toggle_close_log">X</div>
+                
+           
+                <input class="login_text_input classic_form_input" type="text" name="login" id="login" placeholder="Введите логин">
+                <input  type="text" name="password" id="password" class="password_text_input classic_form_input" placeholder="Введите пароль">
+                             <div class="down_login_input">
+                                <button class="in_form_log" >Войти</button>
+                                <div class="text_question">Забыли пароль?</div>
+                            </div>
+               </form>
+                    </div>
+
+                    <div class="popUp__log popUp__Reg disNoPo">
+                        <form>
+                            <div class="block_close_popUp it_toggle_close ">X</div>
+                            <div class="up_login_input">
+                                <div type="text" class="login_text_input classic_form_input password_text_input" contenteditable="true">Имя и Фамилия</div>
+
+                                <div type="text" class="password_text_input classic_form_input" contenteditable="true">Телефон</div>
+                            </div>
+                            <div class="down_login_input">
+                                <button class="in_form_log">Заказать звонок</button>
+                            </div>
+                        </form>
+                    </div>
+                    <?php 
+                     if($_COOKIE['user'] == ''):
+                        ?>
+                    <div class="come__acc it_toggle_close_log">Вход</div>
+                    <div class="stick">|</div>
+                    <div class="reg__acc"><a href="http://noyt-site/pages/reg.php">Регистрация</a> </div>
+                    <?php
+                    else:
+                    ?>
+                    <div class="reg__acc"> <a><?= $_COOKIE['user']?></a></div>
+                    <div class="stick">|</div>
+                    <div class="reg__acc"><a href="./pages/exit.php">Выйти</a> </div>
+                        <?php
+                        endif;
+                        ?>
+                </div>
+            </div>
+            <div class="info__banner">
+                <div class="up__info__banner">
+                    <div class="left__up">
+
+
+
+                        <!-- 
+                        <div class=" slideshow-container">
+                            <div class="img__banner">
+                                <img src="/img/banner1.png" class="in_img__banner" alt="">
+                                <img src="/img/banner2.png" class="in_img__banner" alt="">
+                                <img src="/img/banner3.png" class="in_img__banner" alt="">
+                            </div>
+
+                            <div class="mySlides1 mySlides fade">
+                                <img src="/img/banner1.png" style="width:100%">
+                            </div>
+
+                            <div class="mySlides1 mySlides fade">
+                                <img src="/img/banner2.png" style="width:100%">
+                            </div>
+
+                            <div class="mySlides1 mySlides fade">
+                                <img src="/img/banner3.png" style="width:100%">
+                            </div>
+
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>
+
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+
+                            <div class="point">
+                                <div class="one__point point__main dot"></div>
+                                <div class="two__point point__main active__point dot"></div>
+                                <div class="three__point point__main dot"></div>
+                                <div class="four__point point__main dot"></div>
+                            </div>
+
+                        </div> -->
+
+                        <div class="slideshow-container ">
+
+                            <div class="img__banner mySlides fade">
+                                <!-- <div class="numbertext">1 / 3</div> -->
+                                <img src="./img/banner1.png" style="width:100%">
+                                <!-- <div class="text">Caption Text</div> -->
+
+                            </div>
+
+                            <div class="img__banner mySlides fade">
+                                <!-- <div class="numbertext">2 / 3</div> -->
+                                <img src="./img/banner2.png" style="width:100%">
+                                <!-- <div class="text">Caption Two</div> -->
+                            </div>
+
+                            <div class="img__banner mySlides fade">
+                                <!-- <div class="numbertext">3 / 3</div> -->
+                                <img src="./img/banner3.png" style="width:100%">
+                                <!-- <div class="text">Caption Three</div> -->
+                            </div>
+
+                            <a class="prev">&#10094;</a>
+                            <a class="next">&#10095;</a>
+
+                        </div>
+                        <br>
+
+                        <div class="point" style="text-align:center">
+                            <span class="dot point__main"></span>
+                            <span class="dot point__main"></span>
+                            <span class="dot point__main"></span>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                    <div class="right__up">
+                        <div class="text__right__block">
+                            <div class="address__info">
+                                <div class="address__up orange__text">
+                                    Адрес:
+                                </div>
+                                <div class="address__down white__text">
+                                    г.Курган, ул. Советская, 174
+                                </div>
+                            </div>
+                            <div class="phone__info ">
+                                <div class="phone__up orange__text">
+                                    Телефон:
+                                </div>
+                                <div class="phone__down white__text">
+                                    +7 (929) 226-91-86
+                                </div>
+                            </div>
+                            <div class="time__info">
+                                <div class="time__up orange__text">
+                                    Режим работы:
+                                </div>
+                                <div class="time__down white__text">
+                                    <div class="string__one white__text">Пн-Пт: 10:00
+                                        <div class="orange__text2">- </div> 18:30</div>
+                                    <div class="string__two white__text">Сб: 10:00
+                                        <div class="orange__text2">- </div>14:00</div>
+                                    <div class="string__three white__text">Вс: Выходной</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="carousel__icon">
+                <div class="carousel__up">Быстрый доступ:</div>
+                <div class="carousel__offer">
+
+                    <div class="arrow__left arrow_style " role="button">
+                        <div class="elem__arrow__left"></div>
+                    </div>
+
+
+
+
+                    <div class="all__offer">
+                        <div class="product__offer">
+                            <div class="product__content mySlidesr">
+                                <div class="product__icon">
+                                    <img src="img/icon1.png" alt="Товары">
+                                </div>
+                                <div class="product__text">
+                                    Товары
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product__offer mySlidesr">
+                            <div class="product__content">
+                                <div class="product__icon">
+                                    <img src="img/icon2.png" alt="Товары">
+                                </div>
+                                <div class="product__text">
+                                    Товары
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product__offer mySlidesr">
+                            <div class="product__content">
+                                <div class="product__icon">
+                                    <img src="img/icon3.png" alt="Товары">
+                                </div>
+                                <div class="product__text">
+                                    Товары
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product__offer mySlidesr">
+                            <div class="product__content">
+                                <div class="product__icon">
+                                    <img src="img/icon3.png" alt="Товары">
+                                </div>
+                                <div class="product__text">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product__offer mySlidesr">
+                            <div class="product__content">
+                                <div class="product__icon">
+                                    <img src="img/icon3.png" alt="Товары">
+                                </div>
+                                <div class="product__text">
+                                    2
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="arrow__right arrow_style">
+                        <div class="elem__arrow__right " role="button"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="window_services">
+        <div class="main__services">
+            <div class="btn_close_services btn_13">
+                x
+            </div>
+            <div class="content_services">
+                <div class="up_services">
+                
+
+                  <?php 
+                  require_once 'title_category.php';
+                  ?>
+                  
+                </div>
+                <div class="down_services">
+                    <div class="description_title">
+                        <div class="text_des_full">
+                            <div class="service_title_ser">Услуга</div>
+                            <div class="price_title_ser">Стоимость, руб.</div>
+                        </div>
+                        <div class="line_title_ser"></div>
+
+
+                    </div>
+                    <div class="list_services_window">
+                       <?php
+                       require_once 'all_rest.php';
+                       ?>
+              
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="section__appeal">
+        <div class="center_position">
+            <div class="number__client">
+                <div class="blue__text"> 1841 </div>
+                клиентов рекомендуют “НОУТ-45”
+            </div>
+
+            <div class="appeal__text">
+                <div class="up__appeal__text">
+                    Забери свою скидку!
+                </div>
+                <div class="down__appeal__text">
+                    Выполни 2 простых шага -
+                </div>
+            </div>
+
+            <div class="phon__inst">
+                <div class="left__inst rectangle">
+                    Запишись по телефону
+                    <div class="bold__text left__five"> +7 (929) 226-91-86 </div>
+                </div>
+                <div class="arrow__transition">
+                    <img src="img/arrow.png" alt="arrow">
+                </div>
+                <div class="right__inst">
+                    <div class="bold__text right__five"> Скидка 5% </div> новым клиентам
+                </div>
+            </div>
+
+
+            <div class="services__map">
+                <div class="services__text ">
+                    Наши услуги:
+                </div>
+
+                <div class="services__card">
+
+                    <div class="card ">
+                        <div class="free_diagnostics">Бесплатная диагностика</div>
+                        <div class="card__up__text">
+                            <div class="text__main">
+                                <div class="main__up__card">Ремонт:</div>
+                                <div class="down__up__card">ЖК МОНИТОРОВ</div>
+                            </div>
+                            <div class="text__more">Подробнее...</div>
+                        </div>
+
+                    </div>
+
+                    <div class="card cardTwo">
+                        <div class="free_diagnostics">Бесплатная диагностика</div>
+                        <div class="card__up__text">
+                            <div class="text__main">
+                                <div class="main__up__card">Ремонт:</div>
+                                <div class="down__up__card">системных блоков</div>
+                            </div>
+                            <div class="text__more">Подробнее...</div>
+                        </div>
+
+                    </div>
+
+                    <div class="card cardThree">
+                        <div class="free_diagnostics">Бесплатная диагностика</div>
+                        <div class="card__up__text">
+                            <div class="text__main">
+                                <div class="main__up__card">Ремонт:</div>
+                                <div class="down__up__card">ноутбуков</div>
+                            </div>
+                            <div class="text__more">Подробнее...</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="block_appeal_act">
+                <div class="why__line">
+                    <img src="/img/conversation.svg" alt="">
+                </div>
+                <h2 class="why__help">
+                    Есть вопросы? Позвольте помочь!
+                </h2>
+
+                <p class="why__free">
+                    Закажите бесплатную консультацию от наших специалистов «Службы Заботы»
+                </p>
+
+                <div class="start__btn__consultation">
+                    <div class="consultation__form">
+
+                    </div>
+                </div>
+
+                <div class="form_tel_act">
+
+                    <div class="part_style_change">
+                        <div class="left_part_tel bottom_border ">
+                            <input class="center_tel_form_one" contenteditable="true" placeholder="Имя:"></input>
+                            <div class="right_tel_form_one">
+                                <img src="/img/add-user.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part_style_change">
+                        <div class="center_part_tel bottom_border part_style_change">
+                            <div class="left_tel_form_one"></div>
+                            <input class="center_tel_form_one" contenteditable="true" placeholder="Телефон:"></input>
+                            <div class="right_tel_form_one">
+                                <img src="/img/phone.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part_style_change">
+                        <div class="right_part_tel">
+                            <button>Заказать звонок</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section__footer">
+        <div class="center_position">
+            <div class="app_footer_block">
+                <div class="text_app_footer_block">
+                    Наше расположение
+                </div>
+                <div class="text_bottom_app_footer_block">
+                    г.Курган, ул.Советская.174
+                </div>
+            </div>
+            <div class="down__footer_block">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2263.154437999715!2d65.36080821607987!3d55.442539023345425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43b7bc5782a5bd1f%3A0x621b6e0cf3843954!2z0YPQuy4g0KHQvtCy0LXRgtGB0LrQsNGPLCAxNzQsINCa0YPRgNCz0LDQvSwg0JrRg9GA0LPQsNC90YHQutCw0Y8g0L7QsdC7LiwgNjQwMDAw!5e0!3m2!1sru!2sru!4v1602089333868!5m2!1sru!2sru"
+                    width="1000" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__box">
+                <div class="footer__items">
+                    <div class="footer__item footer__item_logo">
+                        <a href="https://wayup.in/" class="footer__logo">
+
+                            <img src="img/logoNoyt.png" alt="">
+                        </a>
+                    </div>
+                    <div class="footer__item footer__item_social">
+                        <div class="social">
+                            <a rel="nofollow" href="https://vk.com/wayup_in" title="ВКонтакте" target="_blank"><i>
+                                <img src="img/fa-vk-play.png" alt="">
+                            </i></a>
+
+                            <a href="https://www.youtube.com/c/wayupin" title="Youtube"><i> <img src="img/fa-youtube-play.png" alt=""></i></a>
+
+                            <a rel="nofollow" href="https://www.instagram.com/wayup.in.official" title="Instagram">
+                                <i>
+                                <img src="img/fa-instagram-play.png" alt="">
+                            </i></a>
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <div class="footer__copyrights">
+                            <p class="footer_copy_color footer_copy_size ">2012 - 2020 © НОУТ-45 <br> <span class="footer_copy_color footer_copy_size">Все права защищены</span></p>
+                            <a href="offerta" class="footer_copy_size">Публичная оферта</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__items">
+                    <div class="footer__item footer__item_main">
+                        <div class="footer__subtitle">Основное</div>
+                        <div class="footer__main">
+                            <ul>
+                                <ul>
+                                    <li class="actives"><a href="https://wayup.in/" title="Онлайн-курсы: обучение разработке сайтов, веб-дизайну, javascript, фрилансу">Услуги</a></li>
+                                    <li><a href="/about" title="О проекте">Товары</a></li>
+                                    <li><a href="/premiere" title="Уроки и видео по дизайну и разработке сайтов / WAYUP Premiere">О компании</a></li>
+                                    <li><a href="/blog" title="Блог">Блог</a></li>
+                                    <li><a href="/success" title="Отзывы">Отзывы</a></li>
+                                    <li class="last"><a href="/contacts" title="Контакты">Статус ремонта</a></li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="footer__item footer__item_mailing">
+                        <div class="footer__subtitle"><span>@</span>Вебинары</div>
+                        <div class="footer__webinars">
+                            <p class="footer__send">Разрешите нам присылать вам уведомления о&nbsp;новых эфективных и&nbsp;бесплатных вебинарах</p>
+                            <form action="handler/footer_form.php" class="footer__form" id="popupSubscribe" novalidate="novalidate">
+                                <div class="input-email">
+                                    <input type="email" name="email" class="footer__input" required="" placeholder="Введите ваш Email" aria-required="true">
+
+                                    <div id="continue" class="footer__btn">
+                                        <svg>
+                                            <use xlink:href="#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="lm_source" value="Подписка с сайта">
+                                <div class="input-name">
+                                    <input type="text" name="name" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" class="footer__input" required="" placeholder="Введите вашe имя" aria-required="true">
+                                    <button class="footer__btn" data-submit="">
+                                        <i class="fa fa-paper-plane-o"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="footer__nospam">
+                                <svg>
+                                    <use xlink:href="#lock"></use>
+                                </svg>
+                                <p>Никакого спама. Только ценность.</p>
+                            </div>
+                            <div class="footer__payment-systems">
+                                <ul>
+                                    <li>
+                                        <a title="«Оплата частями» от ПриватБанка">
+                                            <img src="//wayup.in/assets/wayup2/img/payment-systems/privat.png" alt="Оплата частями">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="«Покупка частями» от Монобанка">
+                                            <img src="//wayup.in/assets/wayup2/img/payment-systems/monobank.png" alt="Покупка частями">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="Платежные карты Visa">
+                                            <img src="//wayup.in/assets/wayup2/img/payment-systems/visa.png" alt="Visa">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="Платежные карты Mastercard">
+                                            <img src="//wayup.in/assets/wayup2/img/payment-systems/mastercard.png" alt="Mastercard">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="Приват24">
+                                            <img src="//wayup.in/assets/wayup2/img/payment-systems/privat24.png" alt="Приват24">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="Тинькофф">
+                                            <img src="//wayup.in/assets/wayup2/img/payment-systems/sm_tinkof.png" alt="Тинькофф">
+                                        </a>
+                                    </li>
+                                </ul>  
+                                
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="footer__items">
+
+                    <div class="footer__item footer__item_account">
+                        <div class="footer__subtitle">Аккаунт</div>
+                        <div class="footer__account">
+                            <ul>
+
+                                <li><a data-remodal-target="enter" href="#">Войти</a></li>
+                                <li><a href="register">Создать аккаунт</a></li>
+                                <li><a href="partner">Восстановить пароль</a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="footer__item footer__item_connect">
+                        <div class="footer__subtitle">Помощь</div>
+                        <div class="footer__connect">
+                            <div class="footer__contacts">
+                                <a href="mailto:reg@wayup.in"><i class="fa fa-envelope-o"></i>Сообщить о проблеме</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="footer__item footer__item_connect">
+                        <div class="footer__subtitle">Контакты</div>
+                        <div class="footer__connect">
+                            <div class="footer__contacts">
+                                <!-- <a href="mailto:reg@wayup.in"><i class="fa fa-envelope-o"></i>noyt-45@mail.ru</a>
+                                <a href="#" onclick="event.preventDefault();$('#callbackwayup-wrapper').show();return false;"><i class="fa fa-phone"></i>Заказать звонок</a>
+                                <a href="tel:74993503575">+7 (929) 226-91-86</a>
+
+                                <a href="tg://resolve?domain=wayuphelp_bot">@noyt45_help</a> -->
+                                <ul>
+                                    <li class="a_bottom_margin">
+                                        <a href="mailto:reg@wayup.in" class="img_and_text">
+
+                                            <img src="img/sms_footer.png" alt="" class="img_right_margin">
+                                            <div class="block_text_phone">noyt-45@mail.ru </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="a_bottom_margin">
+                                        <a href="mailto:reg@wayup.in" class="img_and_text">
+
+                                            <img src="img/phone_footer.png" alt="" class="img_right_margin">
+                                            <div class="block_text_phone">Заказать звонок</div>
+                                        </a>
+                                    </li>
+
+                                    </li>
+                                    <li class="a_bottom_margin"><a href="" class="a_bottom_margin"> +7  (929)  226-91-86 </a></li>
+                                    <li> <a href="tg://resolve?domain=wayuphelp_bot">@noyt45_help</a></li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="./js/main.js" type="module"></script>
+
+</html>

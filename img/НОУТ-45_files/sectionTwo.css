@@ -1,0 +1,157 @@
+
+
+.bold__text{
+    font-family: "NeoSansPro-Ultra"; 
+}
+
+.section__appeal{
+    margin-top: 5px;
+}
+
+.number__client{
+    font-family: "NeoSansPro-Ultra"; 
+    font-size: 25px;
+    width: 390px;
+    margin-left: 100px;
+   
+}
+
+.blue__text{
+    font-size: 36px;
+    font-family: "NeoSansPro-Ultra"; 
+    display: inline-block;
+    color: #094dfc;
+}
+
+.appeal__text{
+    margin-left:160px;
+    margin-top:60px;
+}
+
+.up__appeal__text{
+    text-decoration: underline;
+}
+
+/* __________________  ПРЯМОУГОЛЬНИКИ  ___________________________    */
+
+.left__inst{
+    width: 340px;
+    height: 55px;
+    border-radius: 10px;
+    border: 1px solid #024efc;
+    color:#000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#024efc;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.right__inst{
+    width: 340px;
+    height: 55px;
+    border-radius: 10px;
+    border: 1px solid #024efc;
+    color:#000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#024efc;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.phon__inst{
+    display: flex;
+    margin:30px 0 0 145px;
+}
+
+.arrow__transition{
+    margin: 0 15px;
+}
+
+.left__five{
+    margin-left: 5px;
+}
+
+.right__five{
+    margin-right: 5px;
+}
+
+/* __________________________ КАРТОЧКИ УСЛУГ  ____________________________________ */
+
+.services__text{
+    font-family: "NeoSansPro-Ultra"; 
+    font-size: 17px;
+    margin:70px 0 0 100px;
+}
+
+.services__card{
+    display: flex;
+}
+
+.card:nth-child(-n+2){
+    margin-right: 40px;
+}
+
+.card{
+    margin-top:60px;
+    width: 340px;
+    height: 160px;
+    border: 1px solid #024efc;
+    overflow: hidden;
+    background-image: url(/img/cardOne.png);
+    display:flex;
+    align-items: center;
+   
+     
+    box-shadow: 0px 3px 6.79px 0.21px rgba(0, 0, 0, 0.35);
+     
+      
+      
+}
+
+.cardTwo{
+    background-image: url(/img/cardTwo.png);
+}
+.cardThree{
+    background-image: url(/img/cardThree.png);
+}
+
+.card__up__text{
+    margin-left:13px;
+}
+
+.main__up__card{
+    font-family: "NeoSansPro-Ultra"; 
+    font-size: 15px;
+}
+
+.down__up__card{
+    font-family: "NeoSansPro-Ultra"; 
+    text-decoration: underline ;
+    font-size: 15px;
+}
+
+.text__more{
+    margin-top:15px;
+    font-size: 13px;
+    color: #024efc;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.free_diagnostics{
+    position: absolute;
+    margin-bottom:160px;
+    margin-left: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #024efc;
+    color: #fff;
+    font-size: 13px;
+    width: 200px;
+    height: 20px;
+}
